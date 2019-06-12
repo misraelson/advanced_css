@@ -2,7 +2,6 @@
   max-width: $grid-width;
   margin: 0 auto;
   margin-bottom: $gutter-verticle;
-  
   @include clearfix;
 
   [class^="col-"] {       // ==> selects all ROWS with class "col-"    
