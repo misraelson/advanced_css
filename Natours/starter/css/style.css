@@ -35,6 +35,9 @@
 
 html {
   font-size: 62.5%; }
+  @media (mad-width: 600px) {
+    html {
+      font-size: 50%; } }
 
 body {
   box-sizing: border-box;
@@ -438,7 +441,7 @@ body {
     display: table;
     overflow: hidden;
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0);
+    transform: translate(-50%, -50%) scale(0.25);
     transition: all .5s .2s; }
   .popup__left {
     width: 33.3333333%;
