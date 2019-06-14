@@ -20,9 +20,10 @@
 // 1200 - 1800px:  DESKTOP
 // 1800 > px :     BIG DESKTOP
 
-@mixin respond-phone {
-  @media (mad-width: 600px) { @content };
-}
+// this example was to understand the long way to do it
+// @mixin respond-phone {
+//   @media (max-width: 600px) { @content };
+// }
 
 // breakpoint argument choices
 // phone
@@ -30,19 +31,22 @@
 // tab-land
 // desktop
 
+// 1em = 16px
+// 600px = 37.5em
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {
-    @media (mad-width: 600px) { @content };
+    @media (max-width: 37.5em) { @content };
   }
-  @if $breakpoing == tab-port {
-    @media (mad-width: 900px) { @content };
-    
+
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) { @content };
   }
-  @if $breakpoing == tab-land {
-    @media (mad-width: 1200px) { @content };
-    
+
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) { @content };  
   }
-  @if $breakpoing == desktop {
-    @media (min-width: 1800px) { @content };
+
+  @if $breakpoint == desktop {
+    @media (min-width: 112.5em) { @content };
   }
-}
+} 
