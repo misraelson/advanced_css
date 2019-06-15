@@ -1,5 +1,5 @@
 .header {
-  height: 95vh;
+  height: 85vh;
   background-image: linear-gradient(
     to right bottom, 
     rgba($color-primary-light, 0.801), 
@@ -8,15 +8,23 @@
   background-size: cover;
   background-position: top;
   position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  // FEATURE QUERIES say if browser supports these css properties, then apply these styles
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    height: 95vh;
+  }
   
   // if resolution is higher than 192 dots per inch retina display, then show larger image
   // 37.5em = 600px, 2000px = 125em, divide by 16 to get em
-  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),
+          (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+          (min-width: 125em) {
     background-image: linear-gradient(
       to right bottom, 
-      rgba($color-secondary-light, 0.801), 
-      rgba($color-secondary-dark, 0.808)),  
+      rgba($color-primary-light, 0.801), 
+      rgba($color-primary-dark, 0.808)),  
       url(../img/hero.jpg);
   }
 
