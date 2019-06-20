@@ -17,8 +17,13 @@
   // align-items: center; // STRETCH / center / end / start
   // justify-items: center;
 
+  
   // ALIGN GRID TRACKS TO GRID CONTAINER
   
+  // aligns grid tracks in the HORIZANTAL or ROW DIRECTION
+  // justify-content: center;
+  // aligns grid tracks in the VERTICAL or COLUMN DIRECTION
+  // align-content: center;
 
   grid-template-areas: "head head head ."
                        "box-1 box-2 box-3 side"
